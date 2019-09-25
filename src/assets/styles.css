@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+#root {
+  height: 100%;
+}
+#root .App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: sans-serif;
+}
+#root .App article {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: calc(100% - 100px);
+}
+#root .App header {
+  height: 50px;
+  background: lightcyan;
+}
+#root .App footer {
+  height: 50px;
+  background: PapayaWhip;
+}
+#root .App .CompB {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#root .App .CompB .card-container {
+  color: #000;
+}
+#root .App .CompC .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#root .App .CompD .pointer {
+  cursor: pointer;
+}
+#root .App .CompD .nine.wide.column {
+  display: grid;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+#root .App .CompD .image img {
+  width: 100%;
+}
+#root .App .CompD .lists {
+  display: flex;
+  justify-content: space-between;
+}
+#root .App .CompD .ui.list .item {
+  text-align: left;
+  padding: 5px;
+  margin: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #eee;
+}
+#root .App .loginForm,
+.register {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightcoral;
+  border-radius: 3px;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+}
+.error {
+  color: red;
+}
