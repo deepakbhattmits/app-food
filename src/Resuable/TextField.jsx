@@ -8,7 +8,6 @@ const TextField = props => {
     props.handleChange( data )
    }
   return (
-    <div className={props.class}>
       <input
         type={props.type}
         name={props.name}
@@ -16,7 +15,6 @@ const TextField = props => {
         onChange={ handleChange }
         value={ props.value }
       />
-    </div>
   );
 };
 export default TextField;

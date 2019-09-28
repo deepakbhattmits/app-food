@@ -76,24 +76,24 @@ render() {
         {this.state.clicked ? <Redirect to={`/home/${this.state.fields}`} /> : null}
         <div className="login-form">
           <form className="ui form" onSubmit={ this.handleSubmit }>
-            <TextField
-              class={`field ${this.state.errors.email ? "error" : ""}`}
-              // class={`field`}
+            <div className={`field ${this.state.errors.email ? "error" : ""}`}>
+              <TextField
               type="text"
               name="email"
-              value={this.state.fields.email === undefined?'': this.state.fields.email}
+              value={this.state.fields.email === undefined ? '' : this.state.fields.email}
               placeholder="Username"
               handleChange={ this.handleChange }
             />
+            </div>
+            <div className={`field ${this.state.errors.email ? "error" : ""}`}>
             <TextField
-              class={`field ${this.state.errors.password ? "error" : ""}`}
-              // class={`field`}
               type="password"
               name="password"
-              value={this.state.fields.password=== undefined? '': this.state.fields.password}
+              value={this.state.fields.password=== undefined ? '': this.state.fields.password}
               placeholder="Passowrd"
               handleChange={ this.handleChange }
             />
+            </div>
             <button className="ui button" type="submit">
               Submit
             </button>
