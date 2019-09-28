@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import TextField from "../Resuable/TextField";
+import React, { Component } from "react"
+import { Redirect } from "react-router-dom"
+import TextField from "../Resuable/TextField"
+import Button from '../Resuable/Button'
 
 const initialState= {
   fields: {},
@@ -82,7 +83,7 @@ render() {
               name="email"
               value={this.state.fields.email === undefined ? '' : this.state.fields.email}
               placeholder="Username"
-              handleChange={ this.handleChange }
+              onChange={ this.handleChange }
             />
             </div>
             <div className={`field ${this.state.errors.email ? "error" : ""}`}>
@@ -91,12 +92,12 @@ render() {
               name="password"
               value={this.state.fields.password=== undefined ? '': this.state.fields.password}
               placeholder="Passowrd"
-              handleChange={ this.handleChange }
+              onChange={ this.handleChange }
             />
             </div>
-            <button className="ui button" type="submit">
+            <Button className="ui button blue" type="submit">
               Submit
-            </button>
+            </Button>
           </form>
         </div>
       </div>

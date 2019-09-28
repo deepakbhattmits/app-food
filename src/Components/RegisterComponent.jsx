@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import TextField from '../Resuable/TextField'
+import Button from '../Resuable/Button'
 class RegisterForm extends Component {
       state = {
         fields: {},
@@ -97,21 +98,61 @@ class RegisterForm extends Component {
     return (
     <div className="main-registration-container">
      <div className="register">
-        <h3>Registration page</h3>
+        <h4 className="ui dividing header">Registration page</h4>
         <form className='ui form' method="post"  name="userRegistrationForm"  onSubmit= {this.handleSubmit} >
-        <label>Name</label>
-        <input type="text" name="username" value={this.state.fields.username === undefined ? '': this.state.fields.username} onChange={this.handleChange} />
+        <div className="two fields">
+          <div className={`field ${this.state.errors.username ? 'error' : ''}`} >
+          <label>Name</label>
+          <TextField 
+            type="text" 
+            name="username" 
+            value={this.state.fields.username === undefined ? '': this.state.fields.username} 
+            onChange={this.handleChange} 
+            placeholder='please enter Username'
+          />
+        
         <div className="error">{this.state.errors.username}</div>
-        <label>Email ID:</label>
-        <input type="text" name="emailid" value={this.state.fields.emailid === undefined ? '' : this.state.fields.emailid} onChange={this.handleChange}  />
+        </div>
+        <div className={`field ${this.state.errors.emailid ? 'error' : ''}`} >
+          <label>Email ID:</label>
+          <TextField 
+            type="text" 
+            name="emailid" 
+            value={this.state.fields.emailid === undefined ? '' : this.state.fields.emailid} 
+            onChange={this.handleChange}  
+            placeholder='please enter Email'
+          />
+       
         <div className="error">{this.state.errors.emailid}</div>
-        <label>Mobile No:</label>
-        <input type="text" name="mobileno" value={this.state.fields.mobileno=== undefined?'': this.state.fields.mobileno} onChange={this.handleChange}   />
-        <div className="error">{this.state.errors.mobileno}</div>
+        </div>
+        </div>
+        <div className='two fields'>
+        <div className={`field ${this.state.errors.mobileno ? 'error':''}`}>
+          <label>Mobile No:</label>
+          <TextField 
+            type="text" 
+            name="mobileno" 
+            value={this.state.fields.mobileno=== undefined?'': this.state.fields.mobileno} 
+            onChange={this.handleChange}   
+            placeholder='please enter Mobile Number'
+          />
+          <div className="error">{this.state.errors.mobileno}</div>
+        </div>
+        <div className={`field ${this.state.errors.password ? 'error':''}`}>
         <label>Password</label>
-        <input type="password" name="password" value={this.state.fields.password=== undefined? '': this.state.fields.password} onChange={this.handleChange} />
-        <div className="error">{this.state.errors.password}</div>
-        <input type="submit" className="ui button blue"  value="Register"/>
+          <TextField 
+            type="password" 
+            name="password" 
+            value={this.state.fields.password=== undefined? '': this.state.fields.password} 
+            onChange={this.handleChange} 
+            placeholder='please enter Password'
+          />
+          <div className="error">{this.state.errors.password}</div>
+        </div>
+        </div>
+        <Button type="submit" className="ui button blue">
+          submit
+        </Button>
         </form>
     </div>
 </div>
