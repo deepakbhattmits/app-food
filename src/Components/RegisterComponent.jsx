@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '../Resuable/TextField'
 import Button from '../Resuable/Button'
+import Error from '../Resuable/Error'
 class RegisterForm extends Component {
       state = {
         fields: {},
@@ -36,19 +37,19 @@ class RegisterForm extends Component {
 
       if (!fields["username"]) {
         formIsValid = false;
-        errors["username"] = "*Please enter your username.";
+        errors["username"] = "* Please enter your username.";
       }
 
       if (typeof fields["username"] !== "undefined") {
         if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
           formIsValid = false;
-          errors["username"] = "*Please enter alphabet characters only.";
+          errors["username"] = "* Please enter alphabet characters only.";
         }
       }
 
       if (!fields["emailid"]) {
         formIsValid = false;
-        errors["emailid"] = "*Please enter your email-ID.";
+        errors["emailid"] = "* Please enter your email-ID.";
       }
 
       if (typeof fields["emailid"] !== "undefined") {
@@ -56,31 +57,31 @@ class RegisterForm extends Component {
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         if (!pattern.test(fields["emailid"])) {
           formIsValid = false;
-          errors["emailid"] = "*Please enter valid email-ID.";
+          errors["emailid"] = "* Please enter valid email-ID.";
         }
       }
 
       if (!fields["mobileno"]) {
         formIsValid = false;
-        errors["mobileno"] = "*Please enter your mobile no.";
+        errors["mobileno"] = "* Please enter your mobile no.";
       }
 
       if (typeof fields["mobileno"] !== "undefined") {
         if (!fields["mobileno"].match(/^[0-9]{10}$/)) {
           formIsValid = false;
-          errors["mobileno"] = "*Please enter valid mobile no.";
+          errors["mobileno"] = "* Please enter valid mobile no.";
         }
       }
 
       if (!fields["password"]) {
         formIsValid = false;
-        errors["password"] = "*Please enter your password.";
+        errors["password"] = "* Please enter your password.";
       }
 
       if (typeof fields["password"] !== "undefined") {
         if (!fields["password"].match(/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).*$/)) {
           formIsValid = false;
-          errors["password"] = "*Please enter secure and strong password.";
+          errors["password"] = "* Please enter secure and strong password.";
         }
       }
 
@@ -111,7 +112,7 @@ class RegisterForm extends Component {
             placeholder='please enter Username'
           />
         
-        <div className="error">{this.state.errors.username}</div>
+        <Error>{this.state.errors.username}</Error>
         </div>
         <div className={`field ${this.state.errors.emailid ? 'error' : ''}`} >
           <label>Email ID:</label>
@@ -123,7 +124,7 @@ class RegisterForm extends Component {
             placeholder='please enter Email'
           />
        
-        <div className="error">{this.state.errors.emailid}</div>
+       <Error>{this.state.errors.emailid}</Error>
         </div>
         </div>
         <div className='two fields'>
@@ -136,7 +137,7 @@ class RegisterForm extends Component {
             onChange={this.handleChange}   
             placeholder='please enter Mobile Number'
           />
-          <div className="error">{this.state.errors.mobileno}</div>
+          <Error>{this.state.errors.mobileno}</Error>
         </div>
         <div className={`field ${this.state.errors.password ? 'error':''}`}>
         <label>Password</label>
@@ -147,7 +148,7 @@ class RegisterForm extends Component {
             onChange={this.handleChange} 
             placeholder='please enter Password'
           />
-          <div className="error">{this.state.errors.password}</div>
+          <Error>{this.state.errors.password}</Error>
         </div>
         </div>
         <Button type="submit" className="ui button blue">
