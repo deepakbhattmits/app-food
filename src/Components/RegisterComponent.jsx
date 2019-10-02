@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import TextField from '../Resuable/TextField'
 import Button from '../Resuable/Button'
 import Error from '../Resuable/Error'
+import { saveFormData } from '../Actions'
 class RegisterForm extends Component {
       state = {
         fields: {},
@@ -19,6 +21,7 @@ class RegisterForm extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       if (this.validateForm()) {
+        this.props.saveFormData(this.state.fields)
           let fields = {};
           fields["username"] = "";
           fields["emailid"] = "";
@@ -163,6 +166,16 @@ class RegisterForm extends Component {
 
 
 }
+const mapStateToProps = state => {
+  return {
+
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return{
+    saveFormData: data => dispatch(saveFormData(data)),
+  }
+}
 
 
-export default RegisterForm;
+export default connect(mapStateToProps,mapDispatchToProps)(RegisterForm);

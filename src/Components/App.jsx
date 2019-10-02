@@ -8,9 +8,11 @@ import CompB from "./CompB"
 import CompC from "./CompC"
 import CompD from "./CompD"
 import RegisterComponent from './RegisterComponent'
+import Forms from './Forms'
 import Login from './Login'
 import NotFound from "./NotFound"
 import Favourite from "./Favourite"
+import UserData from './UserData'
 const App = () => {
   return (
     <div className="App">
@@ -22,11 +24,14 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={RegisterComponent} />
+            
+            <Route exact path="/register1" component={Forms} />
             <Route path="/home/:data" component={CompA} />
             <Route path="/list" component={CompB} />
             <Route path="/shop/:id" component={CompC} />
             <Route path="/detail/:id" component={CompD} />
             <Route path="/fav" component={Favourite} />
+            <Route path="/userdata" component={UserData} />
             <Route path="*" exact component={NotFound} />
           </Switch>
         </article>

@@ -1,2 +1,6 @@
-export const MARK_FAVORITE = "MARK_FAVORITE"
-export const UNMARK_FAVORITE = "UNMARK_FAVORITE"
+export const foodConstants = {
+    MARK_FAVORITE: 'MARK_FAVORITE',
+    UNMARK_FAVORITE: `UNMARK_FAVORITE`,
+    SAVE_FORM: `SAVE_FORM`,
+    SAVE_FORM1: `SAVE_FORM1`,
+  }

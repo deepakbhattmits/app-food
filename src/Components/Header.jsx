@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <header>
       <div className="ui secondary menu">
-        <Link className="item" to="/home">
+        {/* <Link className="item" to="/home">
           Home
-        </Link>
+        </Link> */}
         <Link className="item" to="/list">
           Category
         </Link>
@@ -15,9 +15,15 @@ const Header = () => {
           <Link className="ui item" to="/fav">
             Favourite
           </Link>
+          <Link className='ui item' to='/userdata'>
+            UserList
+          </Link>
 
           <Link className="ui item" to="/register">
             Register
+          </Link>
+          <Link className="ui item" to="/register1">
+            Register1
           </Link>
           
         </div>
