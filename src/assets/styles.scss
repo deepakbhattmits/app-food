@@ -1,62 +1,98 @@
-.App {
-  text-align: center;
-  font-family: sans-serif;
-  .CompB {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    .card-container {
-      color: #000;
-    }
-  }
-  .CompC {
-    .content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-      }
-    }
-    .CompD {
-      .pointer {
-        cursor: pointer;
-      }
-      // display: flex;
-      .nine {
-        &.wide {
-          &.column{  
-            display: grid;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-direction: row;
+/** @format */
 
-          }
-        }
-      }
-      .image {
-        // margin: 50px 10px 0;
-        img {
-          width: 100%;
-          // @media screen and (min-width: 768px) {
-          //   width: 200px;
-          // }
-      }
-    }
-    .lists {
-      display: flex;
-      justify-content: space-between;
-    }
-    .ui {
-      &.list {
-        .item {
-          text-align: left;
-          padding: 5px;
-          margin: 5px;
-          border-style: solid;
-          border-width: 1px;
-          border-color: #eee;
-        }
-      }
-    }
-}
+.App {
+	height: 100vh;
+	text-align: center;
+	font-family: sans-serif;
+	article {
+		overflow-x: hidden;
+		overflow-y: scroll;
+		padding: 2rem;
+		height: calc(100% - 100px);
+		&::-webkit-scrollbar {
+			width: 0;
+			// background: -webkit-linear-gradient(0, blue 50%, white 100%);
+		}
+
+		// &::-webkit-scrollbar-thumb {
+		// 	background-color: #808080;
+		// 	background: url('http://www.topdesignmag.com/wp-content/uploads/2010/12/137.jpg');
+		// }
+	}
+	header {
+		height: 50px;
+		background: lightcyan;
+	}
+	footer {
+		height: 50px;
+		background: PapayaWhip;
+	}
+	.CompB {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.card-container {
+			color: #000;
+		}
+	}
+	.CompC {
+		.content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row;
+		}
+	}
+	.CompD {
+		.pointer {
+			cursor: pointer;
+		}
+		.ui {
+			&.header {
+				display: flex;
+				justify-content: center;
+				.icon {
+					font-size: 1.2rem;
+				}
+			}
+		}
+		// display: flex;
+		.nine {
+			&.wide {
+				&.column {
+					display: grid;
+					justify-content: space-between;
+					align-items: flex-start;
+					flex-direction: row;
+				}
+			}
+		}
+		.image {
+			// margin: 50px 10px 0;
+			img {
+				width: 100%;
+				// @media screen and (min-width: 768px) {
+				//   width: 200px;
+				// }
+			}
+		}
+		.lists {
+			display: flex;
+			justify-content: space-between;
+		}
+		.ui {
+			&.list {
+				.item {
+					text-align: left;
+					padding: 5px;
+					margin: 5px;
+					border-style: solid;
+					border-width: 1px;
+					border-color: #eee;
+				}
+			}
+		}
+	}
+	.CompF {
+	}
 }
